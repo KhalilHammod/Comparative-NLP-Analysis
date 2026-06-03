@@ -1,0 +1,18 @@
+# Ignored files
+.DS_Store
+de_core_news_sm-3.8.0-py3-none-any.whl
+ouddtput.png
+output.png
+Project-K.pdf
+
+# Scratch notebooks and temporary pdf conversions
+*FIXED.ipynb
+*Project.ipynb
+*Project.pdf
+Untitled-2.ipynb
+Untitled-2.pdf
+Word Cloud Project.ipynb
+Word Cloud Project.pdf
+umfrage.ipynb
+k Ampel.ipynb
+German_WordCloud_Portfolio_Final.pdf

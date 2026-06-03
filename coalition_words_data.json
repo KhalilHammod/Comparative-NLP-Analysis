@@ -1,0 +1,765 @@
+{
+  "exploratory": {
+    "2021": [
+      {
+        "word": "europäisch",
+        "count": 162
+      },
+      {
+        "word": "digital",
+        "count": 157
+      },
+      {
+        "word": "arbeit",
+        "count": 60
+      },
+      {
+        "word": "kommune",
+        "count": 58
+      },
+      {
+        "word": "kind",
+        "count": 57
+      },
+      {
+        "word": "förderung",
+        "count": 53
+      },
+      {
+        "word": "sicherheit",
+        "count": 51
+      },
+      {
+        "word": "nachhaltig",
+        "count": 48
+      },
+      {
+        "word": "sozial",
+        "count": 47
+      },
+      {
+        "word": "grundlage",
+        "count": 47
+      },
+      {
+        "word": "schutz",
+        "count": 46
+      },
+      {
+        "word": "ausbau",
+        "count": 43
+      },
+      {
+        "word": "forschung",
+        "count": 41
+      },
+      {
+        "word": "europa",
+        "count": 41
+      },
+      {
+        "word": "staat",
+        "count": 40
+      },
+      {
+        "word": "bildung",
+        "count": 40
+      },
+      {
+        "word": "unternehmen",
+        "count": 40
+      },
+      {
+        "word": "demokratie",
+        "count": 39
+      },
+      {
+        "word": "gesellschaft",
+        "count": 38
+      },
+      {
+        "word": "gesetz",
+        "count": 38
+      },
+      {
+        "word": "zugang",
+        "count": 38
+      },
+      {
+        "word": "energie",
+        "count": 37
+      },
+      {
+        "word": "verantwortung",
+        "count": 37
+      },
+      {
+        "word": "partner",
+        "count": 37
+      },
+      {
+        "word": "einsatz",
+        "count": 37
+      },
+      {
+        "word": "unterstützung",
+        "count": 36
+      },
+      {
+        "word": "finanzierung",
+        "count": 36
+      },
+      {
+        "word": "innovation",
+        "count": 35
+      },
+      {
+        "word": "standard",
+        "count": 35
+      },
+      {
+        "word": "gesetzlich",
+        "count": 34
+      },
+      {
+        "word": "unabhängig",
+        "count": 33
+      },
+      {
+        "word": "infrastruktur",
+        "count": 32
+      },
+      {
+        "word": "instrument",
+        "count": 32
+      },
+      {
+        "word": "regelung",
+        "count": 32
+      },
+      {
+        "word": "politisch",
+        "count": 32
+      },
+      {
+        "word": "klimaschutz",
+        "count": 31
+      },
+      {
+        "word": "privat",
+        "count": 31
+      },
+      {
+        "word": "verfahren",
+        "count": 31
+      },
+      {
+        "word": "frau",
+        "count": 30
+      },
+      {
+        "word": "chance",
+        "count": 29
+      },
+      {
+        "word": "region",
+        "count": 29
+      },
+      {
+        "word": "menschenrecht",
+        "count": 28
+      },
+      {
+        "word": "global",
+        "count": 28
+      },
+      {
+        "word": "erneuerbar",
+        "count": 28
+      },
+      {
+        "word": "rahmenbedingung",
+        "count": 28
+      },
+      {
+        "word": "freiheit",
+        "count": 27
+      },
+      {
+        "word": "zukunft",
+        "count": 27
+      },
+      {
+        "word": "demokratisch",
+        "count": 27
+      },
+      {
+        "word": "staatlich",
+        "count": 27
+      },
+      {
+        "word": "voraussetzung",
+        "count": 27
+      }
+    ],
+    "2025": [
+      {
+        "word": "europäisch",
+        "count": 127
+      },
+      {
+        "word": "digital",
+        "count": 124
+      },
+      {
+        "word": "kommune",
+        "count": 66
+      },
+      {
+        "word": "unternehmen",
+        "count": 49
+      },
+      {
+        "word": "förderung",
+        "count": 48
+      },
+      {
+        "word": "kind",
+        "count": 48
+      },
+      {
+        "word": "arbeit",
+        "count": 46
+      },
+      {
+        "word": "europa",
+        "count": 45
+      },
+      {
+        "word": "sicherheit",
+        "count": 45
+      },
+      {
+        "word": "euro",
+        "count": 45
+      },
+      {
+        "word": "infrastruktur",
+        "count": 44
+      },
+      {
+        "word": "forschung",
+        "count": 42
+      },
+      {
+        "word": "investition",
+        "count": 41
+      },
+      {
+        "word": "staat",
+        "count": 36
+      },
+      {
+        "word": "frau",
+        "count": 34
+      },
+      {
+        "word": "sozial",
+        "count": 34
+      },
+      {
+        "word": "schutz",
+        "count": 33
+      },
+      {
+        "word": "finanzierung",
+        "count": 31
+      },
+      {
+        "word": "strategisch",
+        "count": 31
+      },
+      {
+        "word": "gesetzlich",
+        "count": 31
+      },
+      {
+        "word": "demokratie",
+        "count": 30
+      },
+      {
+        "word": "ausbau",
+        "count": 30
+      },
+      {
+        "word": "zugang",
+        "count": 30
+      },
+      {
+        "word": "unterstützung",
+        "count": 29
+      },
+      {
+        "word": "interesse",
+        "count": 29
+      },
+      {
+        "word": "regelung",
+        "count": 29
+      },
+      {
+        "word": "grundlage",
+        "count": 28
+      },
+      {
+        "word": "partner",
+        "count": 27
+      },
+      {
+        "word": "wirtschaftlich",
+        "count": 26
+      },
+      {
+        "word": "kultur",
+        "count": 25
+      },
+      {
+        "word": "wettbewerbsfähigkeit",
+        "count": 25
+      },
+      {
+        "word": "instrument",
+        "count": 25
+      },
+      {
+        "word": "verwaltung",
+        "count": 25
+      },
+      {
+        "word": "anreiz",
+        "count": 25
+      },
+      {
+        "word": "gesetz",
+        "count": 25
+      },
+      {
+        "word": "kommunal",
+        "count": 25
+      },
+      {
+        "word": "innovation",
+        "count": 24
+      },
+      {
+        "word": "verantwortung",
+        "count": 24
+      },
+      {
+        "word": "zukunft",
+        "count": 24
+      },
+      {
+        "word": "bürger",
+        "count": 24
+      },
+      {
+        "word": "prozent",
+        "count": 24
+      },
+      {
+        "word": "global",
+        "count": 24
+      },
+      {
+        "word": "blick",
+        "count": 24
+      },
+      {
+        "word": "klein",
+        "count": 24
+      },
+      {
+        "word": "raum",
+        "count": 23
+      },
+      {
+        "word": "sport",
+        "count": 23
+      },
+      {
+        "word": "gesellschaft",
+        "count": 23
+      },
+      {
+        "word": "rahmenbedingung",
+        "count": 23
+      },
+      {
+        "word": "besonderer",
+        "count": 23
+      },
+      {
+        "word": "bildung",
+        "count": 22
+      }
+    ]
+  },
+  "dictionary": {
+    "2021": {
+      "migration_control": {
+        "count": 16,
+        "density": 2.98,
+        "matches": {
+          "grenzschutz": 2,
+          "abschieb": 4,
+          "rückführ": 1,
+          "zurückweis": 1,
+          "außengrenze": 1,
+          "schleuser": 1,
+          "asylverfahren": 6
+        }
+      },
+      "climate_transition": {
+        "count": 361,
+        "density": 67.24,
+        "matches": {
+          "klima": 198,
+          "klimaschutz": 49,
+          "klimaneutral": 27,
+          "energiewende": 6,
+          "erneuerbar": 37,
+          "windkraft": 2,
+          "solar": 3,
+          "wasserstoff": 27,
+          "dekarbonis": 4,
+          "kohleausstieg": 8
+        }
+      },
+      "fiscal_policy": {
+        "count": 395,
+        "density": 73.57,
+        "matches": {
+          "investition": 61,
+          "schuldenbremse": 4,
+          "haushalt": 34,
+          "finanz": 172,
+          "steuer": 115,
+          "entlastung": 4,
+          "sondervermögen": 2,
+          "subvention": 3
+        }
+      },
+      "eu_integration": {
+        "count": 24,
+        "density": 4.47,
+        "matches": {
+          "binnenmarkt": 6,
+          "souveränität": 10,
+          "europarecht": 8
+        }
+      },
+      "foreign_policy": {
+        "count": 70,
+        "density": 13.04,
+        "matches": {
+          "außenpolitik": 12,
+          "bündnisverteidigung": 1,
+          "nato": 11,
+          "bundeswehr": 18,
+          "rüstung": 28
+        }
+      },
+      "democratic_resilience": {
+        "count": 91,
+        "density": 16.95,
+        "matches": {
+          "demokratie": 47,
+          "rechtsstaat": 28,
+          "extremismus": 8,
+          "resilienz": 7,
+          "verfassungsschutz": 1
+        }
+      },
+      "digitalization_debureaucratization": {
+        "count": 67,
+        "density": 12.48,
+        "matches": {
+          "digitalisierung": 59,
+          "bürokratieabbau": 3,
+          "entbürokratisierung": 4,
+          "digitaler staat": 1
+        }
+      }
+    },
+    "2025": {
+      "migration_control": {
+        "count": 31,
+        "density": 6.09,
+        "matches": {
+          "grenzkontroll": 1,
+          "grenzschutz": 3,
+          "abschieb": 6,
+          "rückführ": 11,
+          "zurückweis": 2,
+          "ausreisepflicht": 4,
+          "asylverfahren": 4
+        }
+      },
+      "climate_transition": {
+        "count": 175,
+        "density": 34.37,
+        "matches": {
+          "klima": 80,
+          "klimaschutz": 16,
+          "klimaneutral": 18,
+          "energiewende": 5,
+          "erneuerbar": 24,
+          "windkraft": 6,
+          "solar": 3,
+          "wasserstoff": 16,
+          "dekarbonis": 6,
+          "kohleausstieg": 1
+        }
+      },
+      "fiscal_policy": {
+        "count": 434,
+        "density": 85.23,
+        "matches": {
+          "investition": 71,
+          "schuldenbremse": 2,
+          "haushalt": 39,
+          "finanz": 164,
+          "steuer": 121,
+          "entlastung": 16,
+          "sondervermögen": 18,
+          "subvention": 3
+        }
+      },
+      "eu_integration": {
+        "count": 25,
+        "density": 4.91,
+        "matches": {
+          "binnenmarkt": 8,
+          "souveränität": 14,
+          "europarecht": 3
+        }
+      },
+      "foreign_policy": {
+        "count": 63,
+        "density": 12.37,
+        "matches": {
+          "außenpolitik": 5,
+          "bündnisverteidigung": 1,
+          "nato": 19,
+          "bundeswehr": 19,
+          "rüstung": 15,
+          "verteidigungsausgaben": 4
+        }
+      },
+      "democratic_resilience": {
+        "count": 72,
+        "density": 14.14,
+        "matches": {
+          "demokratie": 37,
+          "rechtsstaat": 10,
+          "extremismus": 6,
+          "resilienz": 17,
+          "verfassungsschutz": 2
+        }
+      },
+      "digitalization_debureaucratization": {
+        "count": 68,
+        "density": 13.35,
+        "matches": {
+          "digitalisierung": 43,
+          "bürokratieabbau": 4,
+          "entbürokratisierung": 7,
+          "bürokratierückbau": 14
+        }
+      }
+    }
+  },
+  "collocations": {
+    "2021": {
+      "migration_enforcement": [
+        {
+          "word": "wirksam",
+          "count": 3
+        },
+        {
+          "word": "offensive",
+          "count": 2
+        },
+        {
+          "word": "konsequent",
+          "count": 2
+        },
+        {
+          "word": "freiwillig",
+          "count": 2
+        },
+        {
+          "word": "finden",
+          "count": 1
+        }
+      ],
+      "klimaschutz": [
+        {
+          "word": "massiv",
+          "count": 6
+        },
+        {
+          "word": "nachhaltig",
+          "count": 4
+        },
+        {
+          "word": "zentral",
+          "count": 3
+        },
+        {
+          "word": "beschleunigen",
+          "count": 3
+        },
+        {
+          "word": "brauchen",
+          "count": 3
+        }
+      ],
+      "investitionen": [
+        {
+          "word": "nachhaltig",
+          "count": 3
+        },
+        {
+          "word": "privat",
+          "count": 3
+        },
+        {
+          "word": "digital",
+          "count": 3
+        },
+        {
+          "word": "nötig",
+          "count": 3
+        },
+        {
+          "word": "gewährleisten",
+          "count": 2
+        }
+      ],
+      "digitalisierung": [
+        {
+          "word": "digital",
+          "count": 12
+        },
+        {
+          "word": "vorantreiben",
+          "count": 5
+        },
+        {
+          "word": "ermöglichen",
+          "count": 5
+        },
+        {
+          "word": "nutzen",
+          "count": 5
+        },
+        {
+          "word": "einführen",
+          "count": 4
+        }
+      ]
+    },
+    "2025": {
+      "migration_enforcement": [
+        {
+          "word": "ehrenamtlich",
+          "count": 2
+        },
+        {
+          "word": "vorübergehend",
+          "count": 2
+        },
+        {
+          "word": "beantragen",
+          "count": 2
+        },
+        {
+          "word": "dauerhaft",
+          "count": 2
+        },
+        {
+          "word": "freiwillig",
+          "count": 2
+        }
+      ],
+      "klimaschutz": [
+        {
+          "word": "verfolgen",
+          "count": 3
+        },
+        {
+          "word": "erreichen",
+          "count": 2
+        },
+        {
+          "word": "pariser",
+          "count": 2
+        },
+        {
+          "word": "wirtschaftlich",
+          "count": 2
+        },
+        {
+          "word": "beschleunigt",
+          "count": 2
+        }
+      ],
+      "investitionen": [
+        {
+          "word": "privat",
+          "count": 3
+        },
+        {
+          "word": "massiv",
+          "count": 2
+        },
+        {
+          "word": "gesichert",
+          "count": 2
+        },
+        {
+          "word": "verlässlichen",
+          "count": 2
+        },
+        {
+          "word": "degressiv",
+          "count": 2
+        }
+      ],
+      "digitalisierung": [
+        {
+          "word": "digital",
+          "count": 11
+        },
+        {
+          "word": "konsequent",
+          "count": 5
+        },
+        {
+          "word": "nutzen",
+          "count": 5
+        },
+        {
+          "word": "modern",
+          "count": 3
+        },
+        {
+          "word": "vereinfachen",
+          "count": 3
+        }
+      ]
+    }
+  }
+}

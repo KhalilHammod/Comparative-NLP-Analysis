@@ -1,0 +1,67 @@
+{
+  "migration_control": [
+    "grenzkontroll",
+    "grenzschutz",
+    "abschieb",
+    "rückführ",
+    "zurückweis",
+    "außengrenze",
+    "binnengrenze",
+    "ausreisepflicht",
+    "schleuser",
+    "asylverfahren"
+  ],
+  "climate_transition": [
+    "klima",
+    "klimaschutz",
+    "klimaneutral",
+    "energiewende",
+    "erneuerbar",
+    "windkraft",
+    "solar",
+    "wasserstoff",
+    "dekarbonis",
+    "kohleausstieg"
+  ],
+  "fiscal_policy": [
+    "investition",
+    "schuldenbremse",
+    "haushalt",
+    "finanz",
+    "steuer",
+    "entlastung",
+    "sondervermögen",
+    "subvention"
+  ],
+  "eu_integration": [
+    "eu-reform",
+    "binnenmarkt",
+    "europäische integration",
+    "souveränität",
+    "zusammenhalt in europa",
+    "europarecht"
+  ],
+  "foreign_policy": [
+    "außenpolitik",
+    "bündnisverteidigung",
+    "nato",
+    "bundeswehr",
+    "rüstung",
+    "verteidigungsausgaben"
+  ],
+  "democratic_resilience": [
+    "demokratie",
+    "rechtsstaat",
+    "extremismus",
+    "resilienz",
+    "verfassungsschutz"
+  ],
+  "digitalization_debureaucratization": [
+    "digitalisierung",
+    "bürokratieabbau",
+    "entbürokratisierung",
+    "bürokratierückbau",
+    "digitaler staat",
+    "modernisierung der verwaltung"
+  ]
+}
