@@ -408,32 +408,42 @@
   "dictionary": {
     "2021": {
       "migration_control": {
-        "count": 16,
-        "density": 2.98,
+        "count": 161,
+        "density": 29.99,
         "matches": {
+          "migration": 23,
+          "einwander": 11,
+          "zuwander": 2,
+          "asyl": 15,
+          "flücht": 16,
+          "geflücht": 7,
           "grenzschutz": 2,
           "abschieb": 4,
           "rückführ": 1,
           "zurückweis": 1,
-          "außengrenze": 1,
-          "schleuser": 1,
-          "asylverfahren": 6
+          "bleiberecht": 6,
+          "aufenthalt": 15,
+          "integration": 28,
+          "aufnahme": 14,
+          "humanitär": 16
         }
       },
       "climate_transition": {
-        "count": 361,
-        "density": 67.24,
+        "count": 484,
+        "density": 90.14,
         "matches": {
           "klima": 198,
-          "klimaschutz": 49,
-          "klimaneutral": 27,
+          "umwelt": 33,
+          "ökolog": 32,
+          "natur": 39,
           "energiewende": 6,
           "erneuerbar": 37,
           "windkraft": 2,
           "solar": 3,
-          "wasserstoff": 27,
           "dekarbonis": 4,
-          "kohleausstieg": 8
+          "kohleausstieg": 8,
+          "klimaneutral": 27,
+          "nachhaltig": 95
         }
       },
       "fiscal_policy": {
@@ -451,75 +461,92 @@
         }
       },
       "eu_integration": {
-        "count": 24,
-        "density": 4.47,
+        "count": 270,
+        "density": 50.29,
         "matches": {
+          "europa": 74,
+          "europä": 174,
           "binnenmarkt": 6,
-          "souveränität": 10,
-          "europarecht": 8
+          "schengen": 2,
+          "souverän": 14
         }
       },
       "foreign_policy": {
-        "count": 70,
-        "density": 13.04,
+        "count": 223,
+        "density": 41.53,
         "matches": {
-          "außenpolitik": 12,
-          "bündnisverteidigung": 1,
+          "außenpol": 15,
+          "verteidig": 25,
           "nato": 11,
           "bundeswehr": 18,
-          "rüstung": 28
+          "rüstung": 28,
+          "sicherheit": 126
         }
       },
       "democratic_resilience": {
-        "count": 91,
-        "density": 16.95,
+        "count": 161,
+        "density": 29.99,
         "matches": {
-          "demokratie": 47,
+          "demokrat": 84,
           "rechtsstaat": 28,
           "extremismus": 8,
+          "verfassung": 21,
           "resilienz": 7,
-          "verfassungsschutz": 1
+          "justiz": 13
         }
       },
       "digitalization_debureaucratization": {
-        "count": 67,
-        "density": 12.48,
+        "count": 417,
+        "density": 77.67,
         "matches": {
-          "digitalisierung": 59,
-          "bürokratieabbau": 3,
-          "entbürokratisierung": 4,
-          "digitaler staat": 1
+          "digital": 226,
+          "bürokratie": 23,
+          "entbürokrat": 13,
+          "verwaltung": 43,
+          "daten": 99,
+          "online": 13
         }
       }
     },
     "2025": {
       "migration_control": {
-        "count": 31,
-        "density": 6.09,
+        "count": 149,
+        "density": 29.26,
         "matches": {
+          "migration": 33,
+          "einwander": 6,
+          "zuwander": 5,
+          "asyl": 14,
+          "flücht": 8,
+          "geflücht": 3,
           "grenzkontroll": 1,
           "grenzschutz": 3,
           "abschieb": 6,
           "rückführ": 11,
           "zurückweis": 2,
-          "ausreisepflicht": 4,
-          "asylverfahren": 4
+          "bleiberecht": 1,
+          "aufenthalt": 11,
+          "integration": 27,
+          "aufnahme": 11,
+          "humanitär": 7
         }
       },
       "climate_transition": {
-        "count": 175,
-        "density": 34.37,
+        "count": 235,
+        "density": 46.15,
         "matches": {
           "klima": 80,
-          "klimaschutz": 16,
-          "klimaneutral": 18,
+          "umwelt": 28,
+          "ökolog": 6,
+          "natur": 18,
           "energiewende": 5,
           "erneuerbar": 24,
           "windkraft": 6,
           "solar": 3,
-          "wasserstoff": 16,
           "dekarbonis": 6,
-          "kohleausstieg": 1
+          "kohleausstieg": 1,
+          "klimaneutral": 18,
+          "nachhaltig": 40
         }
       },
       "fiscal_policy": {
@@ -537,229 +564,81 @@
         }
       },
       "eu_integration": {
-        "count": 25,
-        "density": 4.91,
+        "count": 230,
+        "density": 45.17,
         "matches": {
+          "europa": 60,
+          "europä": 137,
           "binnenmarkt": 8,
-          "souveränität": 14,
-          "europarecht": 3
+          "souverän": 25
         }
       },
       "foreign_policy": {
-        "count": 63,
-        "density": 12.37,
+        "count": 237,
+        "density": 46.54,
         "matches": {
-          "außenpolitik": 5,
-          "bündnisverteidigung": 1,
+          "außenpol": 6,
+          "verteidig": 52,
           "nato": 19,
           "bundeswehr": 19,
           "rüstung": 15,
-          "verteidigungsausgaben": 4
+          "sicherheit": 126
         }
       },
       "democratic_resilience": {
-        "count": 72,
-        "density": 14.14,
+        "count": 122,
+        "density": 23.96,
         "matches": {
-          "demokratie": 37,
+          "demokrat": 56,
           "rechtsstaat": 10,
           "extremismus": 6,
+          "verfassung": 19,
           "resilienz": 17,
-          "verfassungsschutz": 2
+          "justiz": 14
         }
       },
       "digitalization_debureaucratization": {
-        "count": 68,
-        "density": 13.35,
+        "count": 451,
+        "density": 88.57,
         "matches": {
-          "digitalisierung": 43,
-          "bürokratieabbau": 4,
-          "entbürokratisierung": 7,
-          "bürokratierückbau": 14
+          "digital": 187,
+          "bürokratie": 59,
+          "entbürokrat": 14,
+          "verwaltung": 77,
+          "daten": 101,
+          "online": 13
         }
       }
     }
   },
-  "collocations": {
+  "stances": {
     "2021": {
-      "migration_enforcement": [
-        {
-          "word": "wirksam",
-          "count": 3
-        },
-        {
-          "word": "offensive",
-          "count": 2
-        },
-        {
-          "word": "konsequent",
-          "count": 2
-        },
-        {
-          "word": "freiwillig",
-          "count": 2
-        },
-        {
-          "word": "finden",
-          "count": 1
-        }
-      ],
-      "klimaschutz": [
-        {
-          "word": "massiv",
-          "count": 6
-        },
-        {
-          "word": "nachhaltig",
-          "count": 4
-        },
-        {
-          "word": "zentral",
-          "count": 3
-        },
-        {
-          "word": "beschleunigen",
-          "count": 3
-        },
-        {
-          "word": "brauchen",
-          "count": 3
-        }
-      ],
-      "investitionen": [
-        {
-          "word": "nachhaltig",
-          "count": 3
-        },
-        {
-          "word": "privat",
-          "count": 3
-        },
-        {
-          "word": "digital",
-          "count": 3
-        },
-        {
-          "word": "nötig",
-          "count": 3
-        },
-        {
-          "word": "gewährleisten",
-          "count": 2
-        }
-      ],
-      "digitalisierung": [
-        {
-          "word": "digital",
-          "count": 12
-        },
-        {
-          "word": "vorantreiben",
-          "count": 5
-        },
-        {
-          "word": "ermöglichen",
-          "count": 5
-        },
-        {
-          "word": "nutzen",
-          "count": 5
-        },
-        {
-          "word": "einführen",
-          "count": 4
-        }
-      ]
+      "migration": {
+        "control": 40,
+        "humanitarian": 104
+      },
+      "climate": {
+        "transformative": 166,
+        "market_pragmatic": 78
+      },
+      "fiscal": {
+        "investment": 225,
+        "discipline": 65
+      }
     },
     "2025": {
-      "migration_enforcement": [
-        {
-          "word": "ehrenamtlich",
-          "count": 2
-        },
-        {
-          "word": "vorübergehend",
-          "count": 2
-        },
-        {
-          "word": "beantragen",
-          "count": 2
-        },
-        {
-          "word": "dauerhaft",
-          "count": 2
-        },
-        {
-          "word": "freiwillig",
-          "count": 2
-        }
-      ],
-      "klimaschutz": [
-        {
-          "word": "verfolgen",
-          "count": 3
-        },
-        {
-          "word": "erreichen",
-          "count": 2
-        },
-        {
-          "word": "pariser",
-          "count": 2
-        },
-        {
-          "word": "wirtschaftlich",
-          "count": 2
-        },
-        {
-          "word": "beschleunigt",
-          "count": 2
-        }
-      ],
-      "investitionen": [
-        {
-          "word": "privat",
-          "count": 3
-        },
-        {
-          "word": "massiv",
-          "count": 2
-        },
-        {
-          "word": "gesichert",
-          "count": 2
-        },
-        {
-          "word": "verlässlichen",
-          "count": 2
-        },
-        {
-          "word": "degressiv",
-          "count": 2
-        }
-      ],
-      "digitalisierung": [
-        {
-          "word": "digital",
-          "count": 11
-        },
-        {
-          "word": "konsequent",
-          "count": 5
-        },
-        {
-          "word": "nutzen",
-          "count": 5
-        },
-        {
-          "word": "modern",
-          "count": 3
-        },
-        {
-          "word": "vereinfachen",
-          "count": 3
-        }
-      ]
+      "migration": {
+        "control": 45,
+        "humanitarian": 78
+      },
+      "climate": {
+        "transformative": 130,
+        "market_pragmatic": 91
+      },
+      "fiscal": {
+        "investment": 226,
+        "discipline": 82
+      }
     }
   }
 }

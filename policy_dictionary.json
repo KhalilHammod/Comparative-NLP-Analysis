@@ -1,27 +1,35 @@
 {
   "migration_control": [
+    "migration",
+    "einwander",
+    "zuwander",
+    "asyl",
+    "flücht",
+    "geflücht",
     "grenzkontroll",
     "grenzschutz",
     "abschieb",
     "rückführ",
     "zurückweis",
-    "außengrenze",
-    "binnengrenze",
-    "ausreisepflicht",
-    "schleuser",
-    "asylverfahren"
+    "bleiberecht",
+    "aufenthalt",
+    "integration",
+    "aufnahme",
+    "humanitär"
   ],
   "climate_transition": [
     "klima",
-    "klimaschutz",
-    "klimaneutral",
+    "umwelt",
+    "ökolog",
+    "natur",
     "energiewende",
     "erneuerbar",
     "windkraft",
     "solar",
-    "wasserstoff",
     "dekarbonis",
-    "kohleausstieg"
+    "kohleausstieg",
+    "klimaneutral",
+    "nachhaltig"
   ],
   "fiscal_policy": [
     "investition",
@@ -34,34 +42,34 @@
     "subvention"
   ],
   "eu_integration": [
-    "eu-reform",
+    "europa",
+    "europä",
     "binnenmarkt",
-    "europäische integration",
-    "souveränität",
-    "zusammenhalt in europa",
-    "europarecht"
+    "schengen",
+    "souverän"
   ],
   "foreign_policy": [
-    "außenpolitik",
-    "bündnisverteidigung",
+    "außenpol",
+    "verteidig",
     "nato",
     "bundeswehr",
     "rüstung",
-    "verteidigungsausgaben"
+    "sicherheit"
   ],
   "democratic_resilience": [
-    "demokratie",
+    "demokrat",
     "rechtsstaat",
     "extremismus",
+    "verfassung",
     "resilienz",
-    "verfassungsschutz"
+    "justiz"
   ],
   "digitalization_debureaucratization": [
-    "digitalisierung",
-    "bürokratieabbau",
-    "entbürokratisierung",
-    "bürokratierückbau",
-    "digitaler staat",
-    "modernisierung der verwaltung"
+    "digital",
+    "bürokratie",
+    "entbürokrat",
+    "verwaltung",
+    "daten",
+    "online"
   ]
 }

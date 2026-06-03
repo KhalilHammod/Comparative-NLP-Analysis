@@ -23,16 +23,21 @@ To avoid the ambiguity of raw term counts, we define a list of 7 core policy con
 6. `democratic_resilience`: *demokratie, rechtsstaat, extremismus, resilienz, verfassungsschutz*
 7. `digitalization_debureaucratization`: *digitalisierung, bürokratieabbau, entbürokratisierung, bürokratierückbau, digitaler staat, modernisierung der verwaltung*
 
-### Stage 3: Semantic Context & Collocation Search
-To understand the framing around controversial policy areas, we perform a semantic context search. Rather than searching for isolated lemmas (which fails to capture German compound nouns), we match tokens against entire target concept stems (Migration Enforcement, Klimaschutz, Investitionen, and Digitalisierung). We extract neighboring adjectives (`ADJ`) and verbs (`VERB`) within a 5-word token window around matching concept terms to reveal the exact framing around these policy themes (e.g., highlighting *sicherstellen/ausweisen* for Migration, or *massiv/notwendig* for Investition).
+### Stage 3: Policy Stance Polarity Analysis
+To resolve the ambiguity of raw text counts and misleading collocations for outsiders, we implement a sentence-level Policy Stance Polarity classifier. Using SpaCy token lemmas, we scan each sentence containing target policy terms and classify its framing into two contrasting ideological stances:
+1. **Migration & Grenzkontrolle**: *Control & Enforcement* (border security, deportations) vs. *Humanitarian & Integration* (inclusion, refugee rights).
+2. **Klimawende**: *Transformative & Ambitious* (ecological transition, renewables expansion) vs. *Market & Energiesicherheit* (economic viability, gas/coal security).
+3. **Fiskalpolitik**: *Investment & Modernisierung* (public capital expansion) vs. *Haushaltsdisziplin & Entlastung* (debt brake compliance, tax relief).
+
+This provides a transparent, quantifiable percentage breakdown of the governing cabinet's policy stance.
 
 ---
 
 ## 📈 Key Comparative Findings
 
-- **Migration Control**: By refining the dictionary to focus on border control and enforcement stems (eliminating emission limits like *flottengrenzwerte* and general terms like *Einwanderung*), the analysis reveals that migration control density **literally doubled** in the 2025 agreement compared to 2021 (rising from 2.98 to 6.09 per 10k words).
-- **Climate Transition**: Environmental policy density **halved** in 2025 (dropping from 67.24 to 34.37 per 10k words), indicating a clear political shift and a significant toning-down of green transformation initiatives.
-- **Fiscal Policy**: Shows a strong increase (from 13.22 to 21.41 per 10k words), demonstrating the elevated priority of debt rules, fiscal consolidation, and structural investment frameworks.
+- **Migration & Integration**: Overall migration policy density remains stable at around **30 matches per 10k words** in both agreements. However, Stage 3 stance polarity reveals a dramatic ideological shift: the Control & Enforcement stance rose from **28%** in 2021 to **37%** in 2025, while the Humanitarian & Integration stance fell from **72%** to **63%**.
+- **Climate Transition & Environment**: Environmental policy density **halves** in 2025 (dropping from **90.14** to **46.15** per 10k words), indicating a clear political shift and a significant toning-down of green transformation initiatives.
+- **Fiscal Policy**: Shows a strong increase (from **73.57** to **85.23** per 10k words), demonstrating the elevated priority of debt rules, fiscal consolidation, and structural investment frameworks.
 
 ---
 

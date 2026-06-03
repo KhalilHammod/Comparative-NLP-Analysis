@@ -81,55 +81,63 @@ def run_dictionary_analysis(text, dictionary):
         }
     return results
 
-def run_context_search(text, nlp, target_categories, window_size=5):
-    # Perform semantic collocation search: neighboring ADJ/VERBs around target concepts
+def run_stance_analysis(text, nlp):
+    # Perform sentence-level policy stance analysis
     doc = nlp(text)
-    collocations = {cat: {} for cat in target_categories}
-    allowed_pos = {"ADJ", "VERB"}
+    sentences = list(doc.sents)
     
-    try:
-        german_stop = set(stopwords.words("german"))
-    except LookupError:
-        nltk.download("stopwords")
-        german_stop = set(stopwords.words("german"))
-        
-    blacklist = {
-        "müssen", "können", "sollen", "werden", "wollen", "haben", "geben", "stehen", "setzen", "bringen", "gehen", "sehen", "lassen", "kommen", "nehmen",
-        "schaffen", "stärken", "fördern", "verbessern", "einsetzen", "umsetzen", "unterstützen", "sichern", "ausbauen", "erhöhen", "verringern", "anpassen",
-        "fortführen", "weiterentwickeln", "fortsetzen", "regeln", "legen", "führen", "betreffen", "gehören", "gelten", "bleiben", "stellen", "liegen", "machen",
-        "halten", "sein", "zusätzlich", "neu", "gut", "wichtig", "notwendig", "groß", "klein", "hoch", "niedrig", "stark", "schnell", "direkt", "indirekt",
-        "gemeinsam", "einzeln", "verschieden", "allgemein", "breit", "eng", "klar", "deutlich", "weit", "nah", "möglich", "entsprechend", "beispielhaft",
-        "insbesondere", "deutsch", "europäisch", "international", "national", "regional", "lokal", "kommunal", "global", "staatlich", "öffentlich",
-        "deutschland", "sowie", "dabei", "dazu", "dafür"
+    # Define check functions for token lemmas (no generic 'schutz' match)
+    migration_control = lambda l: ('grenz' in l or 'abschieb' in l or 'rückführ' in l or 'zurückweis' in l or 'ausreise' in l or 'schleuser' in l or l == 'haft' or l == 'gewahrsam' or 'obergrenze' in l) and not ('begrenz' in l or 'wertgrenz' in l or 'preisgrenz' in l or 'altersgrenz' in l or 'bagatellgrenz' in l or 'minijobgrenz' in l or 'grenzwert' in l or 'kappungsgrenz' in l or 'zuverdienstgrenze' in l)
+    migration_humanitarian = lambda l: 'integration' in l or 'aufnahme' in l or 'bleiberecht' in l or 'geflücht' in l or 'humanitär' in l or 'teilhabe' in l or 'spurwechsel' in l or 'asyl' in l or 'flüchtling' in l
+    
+    climate_transformative = lambda l: 'klimaneutral' in l or 'transformation' in l or 'energiewende' in l or 'erneuerbar' in l or 'windkraft' in l or 'solar' in l or 'dekarbonis' in l or 'kohleausstieg' in l or 'ausbau' in l or 'ambitioniert' in l
+    climate_market = lambda l: 'versorgungssicherheit' in l or 'wirtschaftlichkeit' in l or 'marktwirtschaftlich' in l or 'technologieoffen' in l or 'strompreis' in l or 'industrie' in l or 'stabilität' in l or 'gas' in l or 'wasserstoff' in l
+    
+    fiscal_investment = lambda l: 'investition' in l or 'zukunftsinvestition' in l or 'modernisierung' in l or 'sondervermögen' in l or 'infrastruktur' in l or 'förderung' in l
+    fiscal_discipline = lambda l: 'schuldenbremse' in l or 'konsolidierung' in l or 'haushalt' in l or 'disziplin' in l or 'steuersenkung' in l or 'steuerentlastung' in l or 'abbau' in l or 'entlastung' in l
+    
+    results = {
+        "migration": {"control": 0, "humanitarian": 0},
+        "climate": {"transformative": 0, "market_pragmatic": 0},
+        "fiscal": {"investment": 0, "discipline": 0}
     }
-    custom_stops = german_stop.union(blacklist)
     
-    for i, token in enumerate(doc):
-        lemma = token.lemma_.lower()
-        matched_cat = None
-        for cat, checker in target_categories.items():
-            if checker(lemma):
-                matched_cat = cat
-                break
-        if matched_cat:
-            # Look at a window of window_size tokens before and after
-            start = max(0, i - window_size)
-            end = min(len(doc), i + window_size + 1)
+    for sent in sentences:
+        c_score, h_score = 0, 0
+        t_score, m_score = 0, 0
+        i_score, d_score = 0, 0
+        
+        for token in sent:
+            l = token.lemma_.lower()
+            if migration_control(l):
+                c_score += 1
+            if migration_humanitarian(l):
+                h_score += 1
+            if climate_transformative(l):
+                t_score += 1
+            if climate_market(l):
+                m_score += 1
+            if fiscal_investment(l):
+                i_score += 1
+            if fiscal_discipline(l):
+                d_score += 1
+                
+        if c_score > h_score:
+            results["migration"]["control"] += 1
+        elif h_score > c_score:
+            results["migration"]["humanitarian"] += 1
             
-            for j in range(start, end):
-                if j == i:
-                    continue
-                neighbor = doc[j]
-                neighbor_lemma = neighbor.lemma_.lower()
-                if neighbor.pos_ in allowed_pos and neighbor.is_alpha and neighbor_lemma not in custom_stops and len(neighbor_lemma) > 2:
-                    collocations[matched_cat][neighbor_lemma] = collocations[matched_cat].get(neighbor_lemma, 0) + 1
-                    
-    # Format and sort top 5 neighbors for each concept
-    formatted_results = {}
-    for cat, neighbors in collocations.items():
-        sorted_neighbors = sorted(neighbors.items(), key=lambda x: x[1], reverse=True)[:5]
-        formatted_results[cat] = [{"word": n[0], "count": n[1]} for n in sorted_neighbors]
-    return formatted_results
+        if t_score > m_score:
+            results["climate"]["transformative"] += 1
+        elif m_score > t_score:
+            results["climate"]["market_pragmatic"] += 1
+            
+        if i_score > d_score:
+            results["fiscal"]["investment"] += 1
+        elif d_score > i_score:
+            results["fiscal"]["discipline"] += 1
+            
+    return results
 
 def main():
     print("Loading SpaCy German model...")
@@ -161,16 +169,10 @@ def main():
     dict_results_2021 = run_dictionary_analysis(text_2021, dictionary)
     dict_results_2025 = run_dictionary_analysis(text_2025, dictionary)
     
-    # Stage 3: Semantic Context/Collocation Search
-    print("Processing Stage 3: Semantic context analysis...")
-    target_categories = {
-        "migration_enforcement": lambda l: ("grenz" in l or "abschieb" in l or "rückführ" in l or "zurückweis" in l or "ausreise" in l) and not ("begrenz" in l or "wertgrenz" in l or "preisgrenz" in l or "altersgrenz" in l or "bagatellgrenz" in l or "minijobgrenz" in l or "grenzwert" in l or "kappungsgrenz" in l or "zuverdienstgrenze" in l),
-        "klimaschutz": lambda l: "klima" in l or "energiewende" in l or "erneuerbar" in l,
-        "investitionen": lambda l: "invest" in l or "schuldenbremse" in l,
-        "digitalisierung": lambda l: "digital" in l or "bürokratieabbau" in l or "entbürokratisierung" in l or "bürokratierückbau" in l
-    }
-    colloc_results_2021 = run_context_search(text_2021, nlp, target_categories)
-    colloc_results_2025 = run_context_search(text_2025, nlp, target_categories)
+    # Stage 3: Policy Stance analysis
+    print("Processing Stage 3: Policy stance analysis...")
+    stance_results_2021 = run_stance_analysis(text_2021, nlp)
+    stance_results_2025 = run_stance_analysis(text_2025, nlp)
     
     # Renders and saves comparative Germany-masked word clouds
     print("Generating Germany-masked word clouds...")
@@ -187,7 +189,8 @@ def main():
             background_color="white",
             mask=mask_image,
             contour_width=1,
-            contour_color="black"
+            contour_color="black",
+            prefer_horizontal=1.0
         ).generate_from_frequencies(freq_2021)
         
         wc_2025 = WordCloud(
@@ -196,7 +199,8 @@ def main():
             background_color="white",
             mask=mask_image,
             contour_width=1,
-            contour_color="black"
+            contour_color="black",
+            prefer_horizontal=1.0
         ).generate_from_frequencies(freq_2025)
         
         wc_2021.to_file("output_2021.png")
@@ -215,9 +219,9 @@ def main():
             "2021": dict_results_2021,
             "2025": dict_results_2025
         },
-        "collocations": {
-            "2021": colloc_results_2021,
-            "2025": colloc_results_2025
+        "stances": {
+            "2021": stance_results_2021,
+            "2025": stance_results_2025
         }
     }
     

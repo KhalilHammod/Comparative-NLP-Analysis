@@ -3,120 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Koalitionverträge im Vergleich | Computational Social Science</title>
-  <!-- Google Fonts Outfit & Inter -->
+  <title>Koalitionsverträge im Vergleich | Computational Social Science</title>
+  <!-- Google Fonts Lora (Serif) & Inter (Sans-serif) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <link rel="stylesheet" href="index.css">
 </head>
-<body>
+<body class="theme-light">
 
   <header>
     <div>
-      <h1><span class="material-icons-round">analytics</span> Koalitionverträge im Vergleich</h1>
-      <div class="subtitle">Computational Social Science Analysis: 2021 vs. 2025</div>
+      <h1><span class="material-icons-round">analytics</span> <span data-i18n="main-title">Koalitionsverträge im Vergleich</span></h1>
+      <div class="subtitle" data-i18n="subtitle">Vergleichende Textanalyse: Kabinett Scholz (2021) vs. Kabinett Merz (2025)</div>
     </div>
     <div class="controls">
-      <button class="btn-toggle active" id="btn-cloud" onclick="switchView('cloud')">
-        <span class="material-icons-round">cloud</span> Stage 1: Word Clouds
+      <button class="btn-lang-toggle" id="lang-toggle-btn" onclick="toggleLanguage()">
+        <span class="material-icons-round">translate</span>
+        <span id="lang-text">EN</span>
       </button>
-      <button class="btn-toggle" id="btn-list" onclick="switchView('list')">
-        <span class="material-icons-round">bar_chart</span> Stage 2: Policy Dictionary
-      </button>
-      <button class="btn-toggle" id="btn-colloc" onclick="switchView('colloc')">
-        <span class="material-icons-round">bubble_chart</span> Stage 3: Context Search
+      <button class="btn-theme-toggle" id="theme-toggle-btn" onclick="toggleTheme()">
+        <span class="material-icons-round" id="theme-icon">dark_mode</span>
+        <span id="theme-text">Lab Mode</span>
       </button>
     </div>
   </header>
 
-  <main style="padding-top: 2rem;">
-    <!-- 2021 Coalition Panel (SPD, Grüne, FDP) -->
-    <section class="panel" id="panel-2021">
-      <div class="panel-header">
-        <div class="panel-title">
-          <span class="material-icons-round">groups</span>
-          Kabinett Scholz 
-        </div>
-        <span class="badge badge-2021">2021 - 2025</span>
-      </div>
+  <main>
+    <!-- Section 1: Interactive Word Cloud Slider -->
+    <section class="story-section" id="word-clouds-section">
+      <h2 class="section-heading" data-i18n="sec1-heading">1. Wortwolken & Thematische Schwerpunkte</h2>
+      <p class="section-intro" data-i18n="sec1-intro">
+        Auswahl der häufigsten sinntragenden Substantive und Adjektive (unter Ausschluss von Füllwörtern). 
+        Ziehen Sie den Schieberegler horizontal, um das Kabinett Scholz (2021, links) mit dem Kabinett Merz (2025, rechts) zu vergleichen.
+      </p>
       
-      <!-- Word Cloud View (Stage 1) -->
-      <div class="cloud-container view-section" id="cloud-2021">
-        <img src="output_2021.png" alt="Germany Map Word Cloud 2021" style="max-width: 100%; max-height: 400px; object-fit: contain;">
+      <div class="slider-wrapper">
+        <div class="slider-container" id="word-cloud-slider">
+          <!-- Badges placed as direct siblings of slider container so z-index is clean -->
+          <div class="slider-badge badge-left" id="badge-2021" data-i18n="badge-2021">Kabinett Scholz (2021)</div>
+          <div class="slider-badge badge-right" id="badge-2025" data-i18n="badge-2025">Kabinett Merz (2025)</div>
+
+          <!-- 2021 image is the base background (LCP candidate) -->
+          <div class="slider-img img-2021">
+            <img src="output_2021.png" alt="Word Cloud 2021 Scholz" fetchpriority="high" />
+          </div>
+          <!-- 2025 image is overlayed and clipped -->
+          <div class="slider-img img-2025" id="img-2025-overlay">
+            <img src="output_2025.png" alt="Word Cloud 2025 Merz" fetchpriority="high" />
+          </div>
+          <!-- Sliding Divider Bar -->
+          <div class="slider-handle" id="slider-handle">
+            <div class="handle-line"></div>
+            <div class="handle-button">
+              <span class="material-icons-round">unfold_more</span>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <!-- Dictionary View (Stage 2) -->
-      <div class="list-container view-section" id="list-2021" style="display: none;"></div>
-
-      <!-- Collocations/Context View (Stage 3) -->
-      <div class="colloc-container view-section" id="colloc-2021" style="display: none;"></div>
     </section>
 
-    <!-- 2025 Coalition Panel (CDU/CSU, SPD) -->
-    <section class="panel" id="panel-2025">
-      <div class="panel-header">
-        <div class="panel-title">
-          <span class="material-icons-round">account_balance</span>
-          Kabinett Merz
-        </div>
-        <span class="badge badge-2025">2025 - 2029</span>
+    <!-- Section 2: Policy Comparison Grid -->
+    <section class="story-section" id="policy-grid-section">
+      <h2 class="section-heading" data-i18n="sec2-heading">2. Begriffsdichte & Inhaltliche Tendenzen</h2>
+      <p class="section-intro" data-i18n="sec2-intro">
+        Systematischer Vergleich der Politikbereiche. Zur besseren Übersicht ist die Analyse unterteilt in 
+        <strong>Fokusbereiche</strong> (mit inhaltlicher Ausrichtung) und 
+        <strong>weitere Themenbereiche</strong> (mit reiner Vorkommensdichte).
+      </p>
+      
+      <h3 class="subsection-heading" data-i18n="sec2-sub1">I. Fokusbereiche mit inhaltlicher Ausrichtung</h3>
+      <div class="domain-grid focus-grid" id="focus-cards-container">
+        <!-- Rendered dynamically by app.js -->
       </div>
       
-      <!-- Word Cloud View (Stage 1) -->
-      <div class="cloud-container view-section" id="cloud-2025">
-        <img src="output_2025.png" alt="Germany Map Word Cloud 2025" style="max-width: 100%; max-height: 400px; object-fit: contain;">
+      <h3 class="subsection-heading" data-i18n="sec2-sub2" style="margin-top: 3.5rem;">II. Weitere Themenbereiche</h3>
+      <div class="domain-grid general-grid" id="general-cards-container">
+        <!-- Rendered dynamically by app.js -->
       </div>
-
-      <!-- Dictionary View (Stage 2) -->
-      <div class="list-container view-section" id="list-2025" style="display: none;"></div>
-
-      <!-- Collocations/Context View (Stage 3) -->
-      <div class="colloc-container view-section" id="colloc-2025" style="display: none;"></div>
     </section>
 
-    <!-- Analytical Insight Footer Section -->
+    <!-- Section 3: Analytical Insights -->
     <section class="insights-section">
-      <div class="panel-title" style="margin-bottom: 1rem;">
+      <div class="insights-header">
         <span class="material-icons-round">psychology</span>
-        Vergleichende Analyse
+        <span data-i18n="insights-heading">Analytische Erkenntnisse</span>
       </div>
-      <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
-        Dieses Dashboard vergleicht die Koalitionsverträge mithilfe einer dreistufigen NLP-Methode. 
-        <strong>Stage 1 (Word Clouds)</strong> zeigt die häufigsten sinntragenden Begriffe nach Herausfilterung bürokratischer Füllwörter. 
-        <strong>Stage 2 (Policy Dictionary)</strong> analysiert die Dichte (Treffer pro 10.000 Wörter) von 7 vordefinierten politischen Schlüsselkonzepten.
-        <strong>Stage 3 (Context Search)</strong> untersucht die semantische Rahmung (Kollokationen) von Kernbegriffen wie <em>Grenze</em> oder <em>Investition</em> durch naheliegende Adjektive und Verben.
+      <p class="insights-intro" data-i18n="insights-intro">
+        Diese wissenschaftliche Fallstudie untersucht die thematischen Schwerpunkte und ideologischen Richtungswechsel 
+        zwischen den Koalitionsverträgen von 2021 und 2025.
       </p>
       
       <div class="insights-grid">
         <div class="insight-card">
           <div class="insight-title">
             <span class="material-icons-round" style="color: var(--color-migration_control);">gavel</span>
-            Migration & Grenzkontrollen
+            <span data-i18n="insight-migration-title">Migration & Integration</span>
           </div>
-          <div class="insight-text">
-            Die Dichte von Begriffen rund um Grenzkontrollen, Abschiebungen und Rückführungen verdoppelt sich 2025 im Vergleich zu 2021 (von 2,98 auf 6,09 pro 10k Wörter) – ein klarer Beleg für die politische Verschiebung hin zu strikterer Durchsetzung.
+          <div class="insight-text" data-i18n="insight-migration-text">
+            Die Gesamtdichte von Begriffen rund um Migration und Integration bleibt mit ca. 30 Treffern pro 10k Wörter stabil. Allerdings zeigt die Ausrichtungsanalyse, dass sich der inhaltliche Fokus massiv von Humanität/Integration (72% in 2021) hin zu Kontrolle und Abschiebung verschiebt (von 28% auf 37% im Jahr 2025).
           </div>
         </div>
 
         <div class="insight-card">
           <div class="insight-title">
             <span class="material-icons-round" style="color: var(--color-climate_transition);">eco</span>
-            Klimawende (Energiewende)
+            <span data-i18n="insight-climate-title">Klimawende (Energiewende)</span>
           </div>
-          <div class="insight-text">
-            Der Fokus auf Klimaschutz und Energiewende halbiert sich in der Vorkommensdichte nahezu (von 67,24 in 2021 auf 34,37 in 2025). Dies spiegelt die inhaltliche Verschiebung weg von Transformation hin zu Stabilität wider.
+          <div class="insight-text" data-i18n="insight-climate-text">
+            Der Fokus auf Klimaschutz und Energiewende halbiert sich in der Vorkommensdichte nahezu (von 90,14 in 2021 auf 46,15 in 2025). Dies spiegelt die inhaltliche Verschiebung weg von Transformation hin zu marktbasierter Energiesicherheit wider.
           </div>
         </div>
 
         <div class="insight-card">
           <div class="insight-title">
             <span class="material-icons-round" style="color: var(--color-digitalization_debureaucratization);">bolt</span>
-            Digitalisierung & Bürokratie
+            <span data-i18n="insight-digital-title">Digitalisierung & Bürokratie</span>
           </div>
-          <div class="insight-text">
+          <div class="insight-text" data-i18n="insight-digital-text">
             Beide Verträge betonen administrative Reformen, jedoch verschiebt sich die Debatte 2025 signifikant von reiner Verwaltungsdigitalisierung hin zu explizitem Bürokratieabbau (*Bürokratierückbau*).
           </div>
         </div>
