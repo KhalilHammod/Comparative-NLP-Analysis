@@ -4,6 +4,8 @@ This case study compares and analyzes the structural priorities of two consecuti
 - **Kabinett Scholz (2021-2025)**: SPD, Alliance 90/The Greens, FDP
 - **Kabinett Merz (2025-2029)**: CDU/CSU, SPD
 
+🔗 **[Live Interactive Dashboard](https://khalilhammod.github.io/Comparative-NLP-Analysis/)**
+
 ---
 
 ## 🧠 Methodology & NLP Pipeline
