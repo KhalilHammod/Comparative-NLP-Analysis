@@ -1,8 +1,8 @@
 # 📊 German Coalition Agreements: Three-Stage Comparative NLP Case Study
 
 This case study compares and analyzes the structural priorities of two consecutive German federal governing agreements using a three-stage Computational Social Science NLP workflow:
-- **Kabinett Scholz I (2021-2025)**: SPD, Alliance 90/The Greens, FDP
-- **Kabinett 2025-2029 (Proposed Coalition)**: CDU/CSU and SPD
+- **Kabinett Scholz (2021-2025)**: SPD, Alliance 90/The Greens, FDP
+- **Kabinett Merz (2025-2029)**: CDU/CSU, SPD
 
 ---
 
