@@ -37,7 +37,12 @@ def clean_and_lemmatize(text, nlp):
         'stärkung', 'reform', 'reformen', 'bereich', 'bereiche', 'rahmen', 'ebene',
         'notwendig', 'zentral', 'wichtig', 'weitere', 'entsprechend', 'bestehend',
         'neu', 'schnell', 'fair', 'sichern', 'erleichtern', 'bleiben', 'schützen',
-        'tragen', 'erreichen', 'schaffen', 'bringen', 'fortsetzen', 'schließen'
+        'tragen', 'erreichen', 'schaffen', 'bringen', 'fortsetzen', 'schließen',
+        # New additions to remove bureaucratic jargon and units of measurement
+        'euro', 'prozent', 'blick', 'besonderer', 'grundlage', 'voraussetzung',
+        'rahmenbedingung', 'einsatz', 'instrument', 'regelung', 'verfahren',
+        'partner', 'gesetzlich', 'staatlich', 'politisch', 'unabhängig', 
+        'standard', 'anreiz', 'klein', 'zugang', 'besonderen', 'besondere', 'voraussetzungen'
     }
     
     spacy_stopwords = nlp.Defaults.stop_words
@@ -59,18 +64,34 @@ def clean_and_lemmatize(text, nlp):
 def run_dictionary_analysis(text, dictionary):
     # Analyze density of custom policy concepts
     text_lower = text.lower()
-    total_words = len(text_lower.split())
+    # Normalize spacing
+    text_clean = " ".join(text_lower.split())
+    total_words = len(text_clean.split())
     results = {}
     
     for concept, keywords in dictionary.items():
         count = 0
         matches = {}
         for kw in keywords:
-            # Simple substring/word boundary count for stems
-            kw_count = text_lower.count(kw)
-            if kw_count > 0:
-                matches[kw] = kw_count
-                count += kw_count
+            if kw == "steuer":
+                # Find all words containing 'steuer'
+                import re
+                all_matches = re.findall(r'\b\w*steuer\w*\b', text_clean)
+                # Exclude steering-related terms
+                excludes = ["steuerung", "steuernd", "gesteuert", "nachsteuern", "entgegensteuern", "wegsteuern", "steuerungswirkung"]
+                filtered_matches = [w for w in all_matches if not any(ex in w for ex in excludes)]
+                kw_count = len(filtered_matches)
+                if kw_count > 0:
+                    from collections import Counter
+                    for w, c in Counter(filtered_matches).items():
+                        matches[w] = c
+                    count += kw_count
+            else:
+                # Simple substring/word boundary count for stems
+                kw_count = text_clean.count(kw)
+                if kw_count > 0:
+                    matches[kw] = kw_count
+                    count += kw_count
                 
         # Normalize density per 10,000 words
         density = (count / total_words) * 10000 if total_words > 0 else 0
@@ -96,16 +117,27 @@ def run_stance_analysis(text, nlp):
     fiscal_investment = lambda l: 'investition' in l or 'zukunftsinvestition' in l or 'modernisierung' in l or 'sondervermögen' in l or 'infrastruktur' in l or 'förderung' in l
     fiscal_discipline = lambda l: 'schuldenbremse' in l or 'konsolidierung' in l or 'haushalt' in l or 'disziplin' in l or 'steuersenkung' in l or 'steuerentlastung' in l or 'abbau' in l or 'entlastung' in l
     
+    # New Stance Lambdas
+    foreign_diplomacy = lambda l: any(x in l for x in ['diplomat', 'abrüst', 'entwicklungszusammenarbeit', 'fried', 'multilateral', 'zivil', 'verhandlung'])
+    foreign_defense = lambda l: any(x in l for x in ['bundeswehr', 'nato', 'rüst', 'verteidig', 'abschreckung', 'streitkräfte'])
+    
+    digital_infra = lambda l: any(x in l for x in ['digital', 'online', 'netz', 'breitband', 'glasfaser', 'daten', 'portal'])
+    digital_debureaucracy = lambda l: any(x in l for x in ['bürokratie', 'entbürokrat', 'planungsbeschleunigung', 'abbau', 'vereinfach', 'beschleunigung'])
+    
     results = {
         "migration": {"control": 0, "humanitarian": 0},
         "climate": {"transformative": 0, "market_pragmatic": 0},
-        "fiscal": {"investment": 0, "discipline": 0}
+        "fiscal": {"investment": 0, "discipline": 0},
+        "foreign": {"diplomacy": 0, "defense": 0},
+        "digital": {"infra": 0, "debureaucracy": 0}
     }
     
     for sent in sentences:
         c_score, h_score = 0, 0
         t_score, m_score = 0, 0
         i_score, d_score = 0, 0
+        dipl_score, def_score = 0, 0
+        infra_score, debur_score = 0, 0
         
         for token in sent:
             l = token.lemma_.lower()
@@ -121,6 +153,14 @@ def run_stance_analysis(text, nlp):
                 i_score += 1
             if fiscal_discipline(l):
                 d_score += 1
+            if foreign_diplomacy(l):
+                dipl_score += 1
+            if foreign_defense(l):
+                def_score += 1
+            if digital_infra(l):
+                infra_score += 1
+            if digital_debureaucracy(l):
+                debur_score += 1
                 
         if c_score > h_score:
             results["migration"]["control"] += 1
@@ -136,6 +176,16 @@ def run_stance_analysis(text, nlp):
             results["fiscal"]["investment"] += 1
         elif d_score > i_score:
             results["fiscal"]["discipline"] += 1
+            
+        if dipl_score > def_score:
+            results["foreign"]["diplomacy"] += 1
+        elif def_score > dipl_score:
+            results["foreign"]["defense"] += 1
+            
+        if infra_score > debur_score:
+            results["digital"]["infra"] += 1
+        elif debur_score > infra_score:
+            results["digital"]["debureaucracy"] += 1
             
     return results
 

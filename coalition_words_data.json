@@ -38,10 +38,6 @@
         "count": 47
       },
       {
-        "word": "grundlage",
-        "count": 47
-      },
-      {
         "word": "schutz",
         "count": 46
       },
@@ -82,23 +78,11 @@
         "count": 38
       },
       {
-        "word": "zugang",
-        "count": 38
-      },
-      {
         "word": "energie",
         "count": 37
       },
       {
         "word": "verantwortung",
-        "count": 37
-      },
-      {
-        "word": "partner",
-        "count": 37
-      },
-      {
-        "word": "einsatz",
         "count": 37
       },
       {
@@ -114,31 +98,7 @@
         "count": 35
       },
       {
-        "word": "standard",
-        "count": 35
-      },
-      {
-        "word": "gesetzlich",
-        "count": 34
-      },
-      {
-        "word": "unabhängig",
-        "count": 33
-      },
-      {
         "word": "infrastruktur",
-        "count": 32
-      },
-      {
-        "word": "instrument",
-        "count": 32
-      },
-      {
-        "word": "regelung",
-        "count": 32
-      },
-      {
-        "word": "politisch",
         "count": 32
       },
       {
@@ -147,10 +107,6 @@
       },
       {
         "word": "privat",
-        "count": 31
-      },
-      {
-        "word": "verfahren",
         "count": 31
       },
       {
@@ -178,10 +134,6 @@
         "count": 28
       },
       {
-        "word": "rahmenbedingung",
-        "count": 28
-      },
-      {
         "word": "freiheit",
         "count": 27
       },
@@ -194,12 +146,60 @@
         "count": 27
       },
       {
-        "word": "staatlich",
-        "count": 27
+        "word": "leben",
+        "count": 26
       },
       {
-        "word": "voraussetzung",
-        "count": 27
+        "word": "vielfalt",
+        "count": 26
+      },
+      {
+        "word": "interesse",
+        "count": 26
+      },
+      {
+        "word": "versorgung",
+        "count": 26
+      },
+      {
+        "word": "system",
+        "count": 25
+      },
+      {
+        "word": "gesellschaftlich",
+        "count": 25
+      },
+      {
+        "word": "kooperation",
+        "count": 25
+      },
+      {
+        "word": "angebot",
+        "count": 25
+      },
+      {
+        "word": "beitrag",
+        "count": 25
+      },
+      {
+        "word": "transformation",
+        "count": 24
+      },
+      {
+        "word": "wohlstand",
+        "count": 24
+      },
+      {
+        "word": "raum",
+        "count": 24
+      },
+      {
+        "word": "frei",
+        "count": 24
+      },
+      {
+        "word": "bundestag",
+        "count": 24
       }
     ],
     "2025": [
@@ -240,10 +240,6 @@
         "count": 45
       },
       {
-        "word": "euro",
-        "count": 45
-      },
-      {
         "word": "infrastruktur",
         "count": 44
       },
@@ -280,19 +276,11 @@
         "count": 31
       },
       {
-        "word": "gesetzlich",
-        "count": 31
-      },
-      {
         "word": "demokratie",
         "count": 30
       },
       {
         "word": "ausbau",
-        "count": 30
-      },
-      {
-        "word": "zugang",
         "count": 30
       },
       {
@@ -302,18 +290,6 @@
       {
         "word": "interesse",
         "count": 29
-      },
-      {
-        "word": "regelung",
-        "count": 29
-      },
-      {
-        "word": "grundlage",
-        "count": 28
-      },
-      {
-        "word": "partner",
-        "count": 27
       },
       {
         "word": "wirtschaftlich",
@@ -328,15 +304,7 @@
         "count": 25
       },
       {
-        "word": "instrument",
-        "count": 25
-      },
-      {
         "word": "verwaltung",
-        "count": 25
-      },
-      {
-        "word": "anreiz",
         "count": 25
       },
       {
@@ -364,19 +332,7 @@
         "count": 24
       },
       {
-        "word": "prozent",
-        "count": 24
-      },
-      {
         "word": "global",
-        "count": 24
-      },
-      {
-        "word": "blick",
-        "count": 24
-      },
-      {
-        "word": "klein",
         "count": 24
       },
       {
@@ -392,31 +348,74 @@
         "count": 23
       },
       {
-        "word": "rahmenbedingung",
-        "count": 23
-      },
-      {
-        "word": "besonderer",
-        "count": 23
-      },
-      {
         "word": "bildung",
         "count": 22
+      },
+      {
+        "word": "sicher",
+        "count": 22
+      },
+      {
+        "word": "herausforderung",
+        "count": 22
+      },
+      {
+        "word": "versorgung",
+        "count": 22
+      },
+      {
+        "word": "programm",
+        "count": 22
+      },
+      {
+        "word": "region",
+        "count": 21
+      },
+      {
+        "word": "planung",
+        "count": 21
+      },
+      {
+        "word": "ländlich",
+        "count": 21
+      },
+      {
+        "word": "integration",
+        "count": 20
+      },
+      {
+        "word": "familie",
+        "count": 20
+      },
+      {
+        "word": "bürokratie",
+        "count": 20
+      },
+      {
+        "word": "schule",
+        "count": 20
+      },
+      {
+        "word": "wettbewerb",
+        "count": 20
+      },
+      {
+        "word": "privat",
+        "count": 20
       }
     ]
   },
   "dictionary": {
     "2021": {
       "migration_control": {
-        "count": 161,
-        "density": 29.99,
+        "count": 154,
+        "density": 28.68,
         "matches": {
           "migration": 23,
           "einwander": 11,
           "zuwander": 2,
           "asyl": 15,
           "flücht": 16,
-          "geflücht": 7,
           "grenzschutz": 2,
           "abschieb": 4,
           "rückführ": 1,
@@ -429,8 +428,8 @@
         }
       },
       "climate_transition": {
-        "count": 484,
-        "density": 90.14,
+        "count": 457,
+        "density": 85.12,
         "matches": {
           "klima": 198,
           "umwelt": 33,
@@ -442,19 +441,73 @@
           "solar": 3,
           "dekarbonis": 4,
           "kohleausstieg": 8,
-          "klimaneutral": 27,
           "nachhaltig": 95
         }
       },
       "fiscal_policy": {
-        "count": 395,
-        "density": 73.57,
+        "count": 372,
+        "density": 69.28,
         "matches": {
           "investition": 61,
           "schuldenbremse": 4,
           "haushalt": 34,
           "finanz": 172,
-          "steuer": 115,
+          "steuerhinterziehung": 7,
+          "steuerfreibetrags": 1,
+          "steuersparkonstruktionen": 1,
+          "steuerrechtliche": 2,
+          "kerosinsteuer": 1,
+          "steuern": 4,
+          "luftverkehrssteuer": 1,
+          "steuer": 5,
+          "steuerbarkeit": 1,
+          "energiesteuern": 1,
+          "steuerbegünstigungen": 1,
+          "steuerfinanzierte": 2,
+          "steuerfreie": 1,
+          "steuerliche": 6,
+          "steuerrecht": 2,
+          "umsatzsteuergesetz": 1,
+          "steuerfreiheit": 1,
+          "steuermitteln": 2,
+          "steuerbefreiung": 1,
+          "steuerlicher": 1,
+          "steuererklärung": 1,
+          "grunderwerbsteuer": 2,
+          "steuerlichen": 5,
+          "umsatzsteuerbefreiung": 1,
+          "steuergutschrift": 1,
+          "steuerpflichtigen": 4,
+          "steuerklassen": 1,
+          "steuerklasse": 1,
+          "steuerflucht": 1,
+          "steuersysteme": 1,
+          "steuergeld": 1,
+          "energiesteuerrichtlinie": 1,
+          "regelbesteuert": 1,
+          "pauschalsteuer": 1,
+          "steuerschwache": 1,
+          "steuerverwaltung": 2,
+          "steuervermeidung": 1,
+          "einfuhrumsatzsteuer": 1,
+          "steuerbegünstigten": 1,
+          "steuererklärungen": 1,
+          "steuerprüfung": 1,
+          "steuerbürokratie": 2,
+          "steuerforschungsinstitut": 1,
+          "steuerregelungen": 1,
+          "steuereinnahmen": 1,
+          "steuergestaltung": 3,
+          "steuergestaltungen": 2,
+          "steuervermei": 1,
+          "umsatzsteuerbetrug": 1,
+          "mehrwertsteuersystems": 1,
+          "mehrwertsteuersystem": 1,
+          "steuerschäden": 1,
+          "steuerbehörden": 1,
+          "besteuert": 1,
+          "steueroasen": 2,
+          "steuergerechtigkeit": 1,
           "entlastung": 4,
           "sondervermögen": 2,
           "subvention": 3
@@ -472,15 +525,16 @@
         }
       },
       "foreign_policy": {
-        "count": 223,
-        "density": 41.53,
+        "count": 100,
+        "density": 18.62,
         "matches": {
           "außenpol": 15,
           "verteidig": 25,
           "nato": 11,
           "bundeswehr": 18,
           "rüstung": 28,
-          "sicherheit": 126
+          "sicherheitsarchitektur": 2,
+          "bündnisverteidigung": 1
         }
       },
       "democratic_resilience": {
@@ -510,15 +564,14 @@
     },
     "2025": {
       "migration_control": {
-        "count": 149,
-        "density": 29.26,
+        "count": 146,
+        "density": 28.67,
         "matches": {
           "migration": 33,
           "einwander": 6,
           "zuwander": 5,
           "asyl": 14,
           "flücht": 8,
-          "geflücht": 3,
           "grenzkontroll": 1,
           "grenzschutz": 3,
           "abschieb": 6,
@@ -532,8 +585,8 @@
         }
       },
       "climate_transition": {
-        "count": 235,
-        "density": 46.15,
+        "count": 217,
+        "density": 42.62,
         "matches": {
           "klima": 80,
           "umwelt": 28,
@@ -545,19 +598,71 @@
           "solar": 3,
           "dekarbonis": 6,
           "kohleausstieg": 1,
-          "klimaneutral": 18,
           "nachhaltig": 40
         }
       },
       "fiscal_policy": {
-        "count": 434,
-        "density": 85.23,
+        "count": 412,
+        "density": 80.91,
         "matches": {
           "investition": 71,
           "schuldenbremse": 2,
           "haushalt": 39,
           "finanz": 164,
-          "steuer": 121,
+          "steuern": 9,
+          "steuer": 3,
+          "steuerliche": 10,
+          "steuerlichen": 5,
+          "steuerbefreiung": 1,
+          "tonnagesteuer": 1,
+          "einfuhrumsatzsteuer": 1,
+          "steuerfrei": 5,
+          "steuerlich": 3,
+          "steuermitteln": 2,
+          "steuerentlastungs": 1,
+          "luftverkehrsteuer": 1,
+          "stromsteuer": 3,
+          "steuerbarer": 1,
+          "steuerbare": 1,
+          "energiesteuer": 1,
+          "unternehmensteuer": 1,
+          "körperschaftssteuer": 1,
+          "einkommensteuer": 3,
+          "körperschaftsteuergesetz": 1,
+          "einkommensteuergesetz": 1,
+          "körperschaftsteuer": 2,
+          "gewerbesteuer": 4,
+          "gewerbesteuerhebesätze": 1,
+          "steuersatzgefällen": 1,
+          "gewerbesteuerhebesatz": 1,
+          "mindeststeuer": 3,
+          "steuerarchitektur": 1,
+          "steuerlicher": 1,
+          "steuerpflichtigen": 1,
+          "finanztransaktionsteuer": 2,
+          "umsatzsteuer": 2,
+          "steuerhinterziehung": 3,
+          "steuervollzug": 1,
+          "steueroasen": 1,
+          "steuerhoheitsgebiete": 1,
+          "steuerforschung": 1,
+          "steuerbürokratie": 1,
+          "steuervereinfachung": 1,
+          "steuersystem": 1,
+          "steuerrelevanten": 1,
+          "steuererklärungen": 2,
+          "steuerfälle": 1,
+          "steuerrechtliche": 1,
+          "tabaksteuer": 1,
+          "umsatzsteuerbetrug": 1,
+          "steuerbetrug": 1,
+          "mehrwertsteuer": 1,
+          "umsatzsteuergesetz": 1,
+          "steuerrechtlich": 1,
+          "steueranreize": 1,
+          "steuersysteme": 1,
+          "steuerdumping": 1,
+          "steuerwettbewerb": 1,
           "entlastung": 16,
           "sondervermögen": 18,
           "subvention": 3
@@ -574,15 +679,16 @@
         }
       },
       "foreign_policy": {
-        "count": 237,
-        "density": 46.54,
+        "count": 115,
+        "density": 22.58,
         "matches": {
           "außenpol": 6,
           "verteidig": 52,
           "nato": 19,
           "bundeswehr": 19,
           "rüstung": 15,
-          "sicherheit": 126
+          "sicherheitsrat": 3,
+          "bündnisverteidigung": 1
         }
       },
       "democratic_resilience": {
@@ -624,6 +730,14 @@
       "fiscal": {
         "investment": 225,
         "discipline": 65
+      },
+      "foreign": {
+        "diplomacy": 91,
+        "defense": 59
+      },
+      "digital": {
+        "infra": 296,
+        "debureaucracy": 75
       }
     },
     "2025": {
@@ -638,6 +752,14 @@
       "fiscal": {
         "investment": 226,
         "discipline": 82
+      },
+      "foreign": {
+        "diplomacy": 45,
+        "defense": 75
+      },
+      "digital": {
+        "infra": 269,
+        "debureaucracy": 156
       }
     }
   }

@@ -540,6 +540,22 @@ main {
   background: #475569; /* Slate Gray */
 }
 
+.stance-seg-diplomacy {
+  background: #0d9488; /* Teal */
+}
+
+.stance-seg-defense {
+  background: var(--color-foreign_policy); /* Slate Gray/Navy */
+}
+
+.stance-seg-infra {
+  background: #0891b2; /* Cyan */
+}
+
+.stance-seg-debureaucracy {
+  background: #c026d3; /* Fuchsia */
+}
+
 /* Stance Shift Arrow Badge */
 .stance-shift-badge {
   display: flex;
@@ -580,6 +596,22 @@ main {
 
 .shift-text-investment {
   color: #0369a1;
+}
+
+.shift-text-diplomacy {
+  color: #0d9488;
+}
+
+.shift-text-defense {
+  color: var(--color-foreign_policy);
+}
+
+.shift-text-infra {
+  color: #0891b2;
+}
+
+.shift-text-debureaucracy {
+  color: #c026d3;
 }
 
 /* Toggles & Monospace Stems Drawers */
@@ -673,6 +705,22 @@ main {
 }
 .stance-def-item.border-discipline {
   border-left: 4px solid #475569;
+}
+
+.stance-def-item.border-diplomacy {
+  border-left: 4px solid #0d9488;
+}
+
+.stance-def-item.border-defense {
+  border-left: 4px solid var(--color-foreign_policy);
+}
+
+.stance-def-item.border-infra {
+  border-left: 4px solid #0891b2;
+}
+
+.stance-def-item.border-debureaucracy {
+  border-left: 4px solid #c026d3;
 }
 
 .stance-card-header {

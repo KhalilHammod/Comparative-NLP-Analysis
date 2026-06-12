@@ -8,39 +8,77 @@ let allData = {
 
 const domains = [
   {
-    key: "migration",
-    dictKey: "migration_control",
-    title: { de: "Migration & Integration", en: "Migration & Integration" },
-    icon: "gavel",
+    key: "foreign",
+    dictKey: "foreign_policy",
+    title: { de: "Außenpolitik & Verteidigung", en: "Foreign Policy & Defense" },
+    icon: "security",
     labels: {
-      de: ["Kontrolle & Durchsetzung", "Humanitär & Integration"],
-      en: ["Control & Enforcement", "Humanitarian & Integration"]
+      de: ["Diplomatie & Kooperation", "Verteidigung & Abschreckung"],
+      en: ["Diplomacy & Cooperation", "Defense & Deterrence"]
     },
-    classes: ["control", "humanitarian"],
+    classes: ["diplomacy", "defense"],
     defs: {
       de: [
-        "Fokus auf Grenzschutz, Abschiebungserleichterung, Rückführung, Zurückweisungen und Haftgewahrsam.",
-        "Fokus auf Asylverfahren, Bleiberechte, Aufnahme, Teilhabe, Flüchtlingsschutz und Integration."
+        "Fokus auf Diplomatie, multilaterale Institutionen, Entwicklungszusammenarbeit, zivile Krisenprävention und Friedensverhandlungen.",
+        "Fokus auf Stärkung der Bundeswehr, NATO-Bündnisverpflichtungen, militärische Abschreckung und Rüstungsinvestitionen."
       ],
       en: [
-        "Focus on border protection, facilitation of deportations, repatriation, pushbacks, and detention.",
-        "Focus on asylum procedures, right to remain, reception, participation, refugee protection, and integration."
+        "Focus on diplomacy, multilateral institutions, development cooperation, civil crisis prevention, and peace negotiations.",
+        "Focus on strengthening the Bundeswehr, NATO alliance commitments, military deterrence, and defense investments."
       ]
     },
     stems: [
-      "grenzkontroll, grenzschutz, abschieb, rückführ, zurückweis, ausreisepflicht, schleuser, haft, gewahrsam, obergrenze",
-      "integration, aufnahme, bleiberecht, geflücht, humanitär, teilhabe, spurwechsel, asyl, flüchtling"
+      "diplomat, abrüst, entwicklung, fried, multilateral, zivil, verhandlung",
+      "bundeswehr, nato, rüst, verteidig, abschreckung, streitkräfte"
     ],
     hasStance: true,
     calcShift: (leftPct21, leftPct25, rightPct21, rightPct25, lang) => {
-      const diff = leftPct25 - leftPct21; // Shift to Control (left)
+      const diff = rightPct25 - rightPct21; // Shift to Defense (right)
       const label = diff > 0 
-        ? (lang === 'de' ? "Verschiebung zu Kontrolle" : "Shift towards Control")
-        : (lang === 'de' ? "Verschiebung zu Humanitär" : "Shift towards Humanitarian");
+        ? (lang === 'de' ? "Verschiebung zu Verteidigung & Abschreckung" : "Shift towards Defense & Deterrence")
+        : (lang === 'de' ? "Verschiebung zu Diplomatie & Kooperation" : "Shift towards Diplomacy & Cooperation");
       return {
         diff: diff,
         text: `+${Math.abs(diff)}% ${label}`,
-        class: diff > 0 ? "shift-text-enforcement" : "shift-text-humanitarian",
+        class: diff > 0 ? "shift-text-defense" : "shift-text-diplomacy",
+        icon: diff > 0 ? "trending_up" : "trending_down"
+      };
+    }
+  },
+  {
+    key: "digital",
+    dictKey: "digitalization_debureaucratization",
+    title: { de: "Digitalisierung & Verwaltung", en: "Digitalization & Bureaucracy" },
+    icon: "bolt",
+    labels: {
+      de: ["Digitalisierung & Infrastruktur", "Entbürokratisierung & Abbau"],
+      en: ["Digitalization & Infrastructure", "Debureaucratization & Relief"]
+    },
+    classes: ["infra", "debureaucracy"],
+    defs: {
+      de: [
+        "Fokus auf Modernisierung der Verwaltung durch Digitalisierung, Breitbandausbau, Online-Portale und datenbasierte Dienste.",
+        "Fokus auf den Abbau von Vorschriften, Planungsbeschleunigung, Deregulierung und Vereinfachung administrativer Prozesse."
+      ],
+      en: [
+        "Focus on modernizing administration through digitalization, broadband expansion, online portals, and data-driven services.",
+        "Focus on reducing regulations, accelerating planning, deregulation, and simplifying administrative processes."
+      ]
+    },
+    stems: [
+      "digital, online, netz, breitband, glasfaser, daten, portal",
+      "bürokratie, entbürokrat, planungsbeschleunigung, abbau, vereinfach, beschleunigung"
+    ],
+    hasStance: true,
+    calcShift: (leftPct21, leftPct25, rightPct21, rightPct25, lang) => {
+      const diff = rightPct25 - rightPct21; // Shift to Debureaucracy (right)
+      const label = diff > 0 
+        ? (lang === 'de' ? "Verschiebung zu Entbürokratisierung" : "Shift towards Debureaucratization")
+        : (lang === 'de' ? "Verschiebung zu Verwaltungsdigitalisierung" : "Shift towards Digitalization");
+      return {
+        diff: diff,
+        text: `+${Math.abs(diff)}% ${label}`,
+        class: diff > 0 ? "shift-text-debureaucracy" : "shift-text-infra",
         icon: diff > 0 ? "trending_up" : "trending_down"
       };
     }
@@ -79,6 +117,44 @@ const domains = [
         diff: diff,
         text: `+${Math.abs(diff)}% ${label}`,
         class: diff > 0 ? "shift-text-market" : "shift-text-transformative",
+        icon: diff > 0 ? "trending_up" : "trending_down"
+      };
+    }
+  },
+  {
+    key: "migration",
+    dictKey: "migration_control",
+    title: { de: "Migration & Integration", en: "Migration & Integration" },
+    icon: "gavel",
+    labels: {
+      de: ["Kontrolle & Durchsetzung", "Humanitär & Integration"],
+      en: ["Control & Enforcement", "Humanitarian & Integration"]
+    },
+    classes: ["control", "humanitarian"],
+    defs: {
+      de: [
+        "Fokus auf Grenzschutz, Abschiebungserleichterung, Rückführung, Zurückweisungen und Haftgewahrsam.",
+        "Fokus auf Asylverfahren, Bleiberechte, Aufnahme, Teilhabe, Flüchtlingsschutz und Integration."
+      ],
+      en: [
+        "Focus on border protection, facilitation of deportations, repatriation, pushbacks, and detention.",
+        "Focus on asylum procedures, right to remain, reception, participation, refugee protection, and integration."
+      ]
+    },
+    stems: [
+      "grenzkontroll, grenzschutz, abschieb, rückführ, zurückweis, ausreisepflicht, schleuser, haft, gewahrsam, obergrenze",
+      "integration, aufnahme, bleiberecht, geflücht, humanitär, teilhabe, spurwechsel, asyl, flüchtling"
+    ],
+    hasStance: true,
+    calcShift: (leftPct21, leftPct25, rightPct21, rightPct25, lang) => {
+      const diff = leftPct25 - leftPct21; // Shift to Control (left)
+      const label = diff > 0 
+        ? (lang === 'de' ? "Verschiebung zu Kontrolle" : "Shift towards Control")
+        : (lang === 'de' ? "Verschiebung zu Humanitär" : "Shift towards Humanitarian");
+      return {
+        diff: diff,
+        text: `+${Math.abs(diff)}% ${label}`,
+        class: diff > 0 ? "shift-text-enforcement" : "shift-text-humanitarian",
         icon: diff > 0 ? "trending_up" : "trending_down"
       };
     }
@@ -142,26 +218,6 @@ const domains = [
     hasStance: false
   },
   {
-    key: "foreign",
-    dictKey: "foreign_policy",
-    title: { de: "Außenpolitik & Verteidigung", en: "Foreign Policy & Defense" },
-    icon: "security",
-    defs: {
-      de: [
-        "Ausgaben für Rüstung, Stärkung der Bundeswehr, multilaterale Sicherheitsabkommen (NATO) und diplomatische Netzwerke.",
-        "Filterstämme zur Quantifizierung:"
-      ],
-      en: [
-        "Spending on armaments, strengthening the Bundeswehr, multilateral security agreements (NATO), and diplomatic networks.",
-        "Filter stems for quantification:"
-      ]
-    },
-    stems: [
-      "außenpol, verteidig, nato, bundeswehr, rüstung, sicherheit"
-    ],
-    hasStance: false
-  },
-  {
     key: "democracy",
     dictKey: "democratic_resilience",
     title: { de: "Demokratische Resilienz", en: "Democratic Resilience" },
@@ -178,26 +234,6 @@ const domains = [
     },
     stems: [
       "demokrat, rechtsstaat, extremismus, verfassung, resilienz, justiz"
-    ],
-    hasStance: false
-  },
-  {
-    key: "digital",
-    dictKey: "digitalization_debureaucratization",
-    title: { de: "Digitalisierung & Verwaltung", en: "Digitalization & Bureaucracy" },
-    icon: "bolt",
-    defs: {
-      de: [
-        "Modernisierung der Verwaltung, Bürokratieabbau, Bereitstellung digitaler Infrastruktur und Online-Dienste.",
-        "Filterstämme zur Quantifizierung:"
-      ],
-      en: [
-        "Modernization of administration, reduction of bureaucracy, provision of digital infrastructure, and online services.",
-        "Filter stems for quantification:"
-      ]
-    },
-    stems: [
-      "digital, bürokratie, entbürokrat, verwaltung, daten, online"
     ],
     hasStance: false
   }
@@ -218,11 +254,13 @@ const staticTranslations = {
     "insights-heading": "Analytische Erkenntnisse",
     "insights-intro": "Diese wissenschaftliche Fallstudie untersucht die thematischen Schwerpunkte und ideologischen Richtungswechsel zwischen den Koalitionsverträgen von 2021 und 2025.",
     "insight-migration-title": "Migration & Integration",
-    "insight-migration-text": "Die Gesamtdichte von Begriffen rund um Migration und Integration bleibt mit ca. 30 Treffern pro 10k Wörter stabil. Allerdings zeigt die Ausrichtungsanalyse, dass sich der inhaltliche Fokus massiv von Humanität/Integration (72% in 2021) hin zu Kontrolle und Abschiebung verschiebt (von 28% auf 37% im Jahr 2025).",
+    "insight-migration-text": "Die Vorkommensdichte migrationspolitischer Begrifflichkeiten bleibt zwischen beiden Regierungsabkommen stabil (ca. 29 Treffer pro 10.000 Wörter). Die Satzebenen-Polaritätsanalyse offenbart jedoch eine signifikante inhaltliche Neuausrichtung: Die relative Frequenz des restriktiven Kontroll- und Durchsetzungs-Framings steigt im Abkommen 2025 auf 37 % (gegenüber 28 % im Jahr 2021), während das humanitär-integrative Framing korrespondierend von 72 % auf 63 % zurückgeht.",
     "insight-climate-title": "Klimawende (Energiewende)",
-    "insight-climate-text": "Der Fokus auf Klimaschutz und Energiewende halbiert sich in der Vorkommensdichte nahezu (von 90,14 in 2021 auf 46,15 in 2025). Dies spiegelt die inhaltliche Verschiebung weg von Transformation hin zu marktbasierter Energiesicherheit wider.",
+    "insight-climate-text": "Die quantitative Analyse dokumentiert eine substanzielle De-Priorisierung der ökologischen Transformation im Koalitionsvertrag 2025. Die relative Begriffsfrequenz für Klimaschutz und Energiewende halbiert sich nahezu von 85,00 (2021) auf 42,62 Treffer pro 10.000 Wörter (2025). Dies indiziert eine programmatische Verschiebung von einer ökologisch-transformativen Ausrichtung hin zu einer markt- und energiesicherheitsorientierten Prioritätensetzung.",
     "insight-digital-title": "Digitalisierung & Bürokratie",
-    "insight-digital-text": "Beide Verträge betonen administrative Reformen, jedoch verschiebt sich die Debatte 2025 signifikant von reiner Verwaltungsdigitalisierung hin zu explizitem Bürokratieabbau (*Bürokratierückbau*).",
+    "insight-digital-text": "Während administrative Reformvorhaben in beiden Dokumenten eine hohe Priorität einnehmen, zeigt die Polaritätsanalyse eine deutliche qualitative Verschiebung des Fokus. Der relative Anteil des Framings zur Entbürokratisierung und Planungsbeschleunigung steigt von 20 % im Jahr 2021 auf 37 % im Jahr 2025. Dies belegt eine Schwerpunktverschiebung von der reinen digitalen Infrastruktur-Implementierung hin zum Abbau regulativer Barrieren.",
+    "insight-foreign-title": "Außenpolitik & Verteidigung",
+    "insight-foreign-text": "Die Analyse der bereinigten Sicherheitsbegriffe verzeichnet eine Zunahme der außen- und verteidigungspolitischen Dichte um 23 % (von 19,90 auf 24,55 Treffer pro 10.000 Wörter). Auf inhaltlicher Ebene dokumentiert die Satzanalyse einen Epochenwechsel: Das im Jahr 2021 dominierende Framing der multilateralen Kooperation und Diplomatie (61 %) weicht im Jahr 2025 einem Fokus auf militärische Verteidigung und Abschreckung (62 %).",
     // UI elements inside cards
     "density-title": "Begriffsdichte (pro 10.000 Wörter)",
     "stance-title": "Inhaltliche Gewichtung & Ausrichtung",
@@ -247,11 +285,13 @@ const staticTranslations = {
     "insights-heading": "Analytical Insights",
     "insights-intro": "This scientific case study examines the thematic priorities and ideological shifts between the coalition agreements of 2021 and 2025.",
     "insight-migration-title": "Migration & Integration",
-    "insight-migration-text": "The overall density of terms around migration and integration remains stable at approx. 30 matches per 10k words. However, the stance analysis shows that the thematic focus shifts massively from humanitarianism/integration (72% in 2021) toward control and deportation (from 28% to 37% in 2025).",
+    "insight-migration-text": "The occurrence density of migration-related terminology remains stable across both agreements (approx. 29 matches per 10,000 words). However, sentence-level stance polarity analysis reveals a significant ideological realignment: the relative frequency of the restrictive control and enforcement framing increases to 37% in the 2025 agreement (up from 28% in 2021), whereas the humanitarian-integrative framing declines from 72% to 63%.",
     "insight-climate-title": "Climate Transition (Energy)",
-    "insight-climate-text": "The focus on climate protection and the energy transition is almost halved in occurrence density (from 90.14 in 2021 to 46.15 in 2025). This reflects the thematic shift away from transformation toward market-based energy security.",
+    "insight-climate-text": "The quantitative analysis documents a substantial de-prioritization of the ecological transition in the 2025 agreement. The relative term density for climate protection and the energy transition is nearly halved, dropping from 85.00 (2021) to 42.62 matches per 10,000 words (2025). This indices a programmatic shift from an ecologically transformative framing toward a market- and energy-security-oriented agenda.",
     "insight-digital-title": "Digitalization & Bureaucracy",
-    "insight-digital-text": "Both agreements emphasize administrative reforms, but the debate in 2025 shifts significantly from pure administrative digitalization toward explicit de-bureaucratization (*Bürokratierückbau*).",
+    "insight-digital-text": "While administrative reform remains a high priority in both documents, the stance analysis indicates a clear qualitative shift in focus. The relative share of debureaucratization and planning acceleration framing increases from 20% in 2021 to 37% in 2025. This documents a pivot from pure digital infrastructure implementation toward the dismantling of regulatory barriers.",
+    "insight-foreign-title": "Foreign Policy & Defense",
+    "insight-foreign-text": "The analysis of refined security terminology reveals a 23% increase in foreign and defense policy density (from 19.90 to 24.55 matches per 10,000 words). At the sentence level, the analysis documents a structural paradigm shift: the framing of multilateral cooperation and diplomacy, which dominated in 2021 (61%), is replaced by a focus on military defense and deterrence in 2025 (62%).",
     // UI elements inside cards
     "density-title": "Concept Density (per 10,000 words)",
     "stance-title": "Thematic Stance & Orientation",

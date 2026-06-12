@@ -5,7 +5,6 @@
     "zuwander",
     "asyl",
     "flücht",
-    "geflücht",
     "grenzkontroll",
     "grenzschutz",
     "abschieb",
@@ -28,7 +27,6 @@
     "solar",
     "dekarbonis",
     "kohleausstieg",
-    "klimaneutral",
     "nachhaltig"
   ],
   "fiscal_policy": [
@@ -54,7 +52,12 @@
     "nato",
     "bundeswehr",
     "rüstung",
-    "sicherheit"
+    "sicherheitpolit",
+    "sicherheitsrat",
+    "sicherheitsbündnis",
+    "sicherheitsarchitektur",
+    "bündnisverteidigung",
+    "friedenssicher"
   ],
   "democratic_resilience": [
     "demokrat",
